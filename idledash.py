@@ -79,13 +79,13 @@ class idledash(Tkinter.Tk):
 		self.canvas.delete("all")
 
 		# Load, rotate, and place the image
-		self.tach = PIL.Image.open('/home/jhu/Desktop/tach.GIF')
+		self.tach = PIL.Image.open('tach.GIF')
 		self.tach = self.tach.rotate(self.angle, expand=True)
 		self.tach_tk = PIL.ImageTk.PhotoImage(self.tach)
 		self.canvas.create_image(self.true_tach_x, self.true_tach_y, image=self.tach_tk, anchor="center")
 
 
-		self.clock = PIL.Image.open('/home/jhu/Desktop/clock2.PNG')
+		self.clock = PIL.Image.open('clock2.PNG')
 		self.clock = self.clock.rotate(self.angle, expand=True)
 		self.clock_tk = PIL.ImageTk.PhotoImage(self.clock)
 		self.canvas.create_image(self.true_clock_x, self.true_clock_y, image=self.clock_tk, anchor="center")
@@ -155,7 +155,7 @@ class idledash(Tkinter.Tk):
 		self.image2 = None
 		
 		# Open the MBZ2.png image and apply brightness enhancement
-		self.image2 = PIL.Image.open('/home/jhu/Desktop/MBZ3.PNG')
+		self.image2 = PIL.Image.open('MBZ3.PNG')
 		self.image2 = self.image2.rotate(self.angle, expand=True)
 		brightness_factor = 1.0 if self.alpha > 1.0 else self.alpha
 		self.faded_image = PIL.ImageEnhance.Brightness(self.image2).enhance(brightness_factor)
